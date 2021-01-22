@@ -115,10 +115,10 @@ void loadStudents(int key)
 	int match = fscanf(fp, "%s %s %s %s", b1, b2, b3, b4);
 	if (match == 4) {
 		if (key != 0){
-			caesarDecrypt(b1, key - 2);
-			caesarDecrypt(b2, key - 2);
-			caesarDecrypt(b3, key - 2);
-			caesarDecrypt(b4, key - 2);
+			caesarDecrypt(b1, 0);
+			caesarDecrypt(b2, 0);
+			caesarDecrypt(b3, 0);
+			caesarDecrypt(b4, 0);
 		}
 		int age;
 		long int id;
