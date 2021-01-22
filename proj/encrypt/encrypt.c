@@ -22,6 +22,43 @@ char shiftChar(char c, int shift, int direction)
   //   shiftChar('c', 3, 1) : 'f'
   //   shiftChar('S', 2, 0) : 'P'
   //   shiftChar('b', 3, 0) : '8'
+  int buf;
+  if (c != ' ')
+  {
+
+  	if (direction == 1)
+  	{
+	  char *ptr = strchr(CHARS, c);
+	  buf = ptr - CHARS;
+	  buf = buf + shift;
+	  while(1){
+	    if (buf > CHARS_LEN) {
+	      buf = buf - CHARS_LEN;
+	    }
+	    else {
+		break;
+	    }
+	  }
+  	}
+  	else if (direction == 0)
+  	{
+	  char *ptr = strchr(CHARS, c);
+	  buf = ptr - CHARS;
+	  buf = buf - shift;
+	  while(1){
+	    if (buf < 0) {
+	      buf = buf + CHARS_LEN;
+	    }
+	    else {
+		break;
+	    }
+	  }
+
+	}
+
+  return CHARS[buf];
+  }
+
 }
 
 
